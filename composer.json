@@ -1,0 +1,12 @@
+{
+    "require": {
+        "slim/php-view": "^2.0",
+        "monolog/monolog": "^1.23",
+        "robmorgan/phinx": "^0.5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "classes/"
+        }
+    }
+}
