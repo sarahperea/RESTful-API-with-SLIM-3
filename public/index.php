@@ -5,9 +5,21 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
-$app = new \Slim\App;
+$app = new \Slim\App([
+	'settings' => [
+		'displayErrorDetails' => true,
+	]
+]);
 
 //require_once('../app/api/users.php');
+
+$container = $app->getContainer();
+
+$container[HomeController::class] = function ($c) { 
+    return new App\Controllers\HomeController;
+};
+
+$app->get('/', 'HomeController:index');
 
 //displays all records of users
 $app->get('/api/users', function($request, $response) {
