@@ -1,16 +1,13 @@
 <?php
 
+namespace App\controllers;
+
+use App\models\Model_User;
+
 class HomeController extends Controller
 {
-
-	public function __construct()
-	{
-
-	}
-
-	public function index($name='')
+	public function index()
 	{		
-		$this->model('Model_User');
-
+		echo Model_User::index();
 	}
 }

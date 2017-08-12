@@ -1,8 +1,8 @@
 <?php
 
-$app->get('/', 'Model_User:index($R)');
-
-
+//$app->get('/', 'Model_User:index' );
+$app->get('/', 'HomeController:index');
+/*
 //displays all records of users
 $app->get('/api/users', function($request, $response) {
 
@@ -52,4 +52,4 @@ $app->delete('/api/users/{id}', function($request, $response) {
 	R::exec( "DELETE FROM user WHERE user.user_id = :id", array(':id' => $id) );
 
 });
-
+*/
