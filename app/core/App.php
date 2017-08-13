@@ -5,13 +5,15 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 require '../rb.php';
-$config['db'] = R::setup( 'mysql:host=localhost;dbname=db_indigo','root', 'luckystar' );
 
 $app = new \Slim\App([
 	'settings' => [
 		'displayErrorDetails' => true,
 	]
 ]);
+
+//$config['db'] = R::setup( 'mysql:host=localhost;dbname=db_indigo','root', 'luckystar' );
+
 
 $container = $app->getContainer();
 
@@ -24,8 +26,6 @@ $container[HomeController::class] = function ($c) {
 };
 
 require '../app/routes.php';
-
-
 
 $app->run();
 
