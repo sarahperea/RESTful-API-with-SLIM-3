@@ -6,7 +6,7 @@ use App\models\UserModel;
 use App\models\PetModel;
 use App\core\RedBeanFactory;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
 	private $redBeanFactory;
 

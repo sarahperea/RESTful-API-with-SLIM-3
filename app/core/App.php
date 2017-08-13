@@ -21,8 +21,8 @@ $container["RedBeanFactory"] = function ($c) {
   return new App\core\RedBeanFactory($c['settings']);
 };
 
-$container[HomeController::class] = function ($c) { 
-	return new App\controllers\HomeController($c->get("RedBeanFactory"));
+$container[UserController::class] = function ($c) { 
+	return new App\controllers\UserController($c->get("RedBeanFactory"));
 };
 
 require '../app/routes.php';
