@@ -4,16 +4,8 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
-/*require '../rb.php';
-
-R::setup( 'mysql:host=localhost;dbname=db_indigo','root', 'luckystar' );
-*/
-
-$config['db'] = 'mysql';
-$config['host'] = 'localhost';
-$config['dbname'] = 'db_indigo';
-$config['user'] = 'root';
-$config['pw'] = 'luckystart';
+require '../rb.php';
+$config['db'] = R::setup( 'mysql:host=localhost;dbname=db_indigo','root', 'luckystar' );
 
 $app = new \Slim\App([
 	'settings' => [
