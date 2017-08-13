@@ -11,6 +11,7 @@ class RedBeanFactory
 	public function __construct($config)
 	{
 		$this->config = $config;
-		\R::setup( 'mysql:host=localhost;dbname=db_indigo','root', 'luckystar' );
+
+		\R::setup( "mysql:host=".$config['host'].";dbname=".$config['dbname'],$config['user'], $config['pw'] );
 	}
 }
