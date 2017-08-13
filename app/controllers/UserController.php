@@ -49,22 +49,4 @@ class UserController extends Controller
 		$user = $userModel->delete($req->getAttribute('id'));
 		return $res->withJson($user, 200);
 	}
-
-	public function addPet($req, $res, $args)
-	{
-		$petModel = new PetModel($this->redBeanFactory);
-		$pet = $petModel->create();
-		$userModel = new UserModel($this->redBeanFactory);
-		$user = $userModel->addPet($req->getAttribute('id'), $pet);
-		return $res->withJson($user, 200);
-	}
-
-	public function retrievePets($req, $res, $args)
-	{
-		$userModel = new UserModel($this->redBeanFactory);
-		$user = $userModel->retrievePets($req->getAttribute('id'), $pet);
-		return $res->withJson($user, 200);
-
-	}
-
 }

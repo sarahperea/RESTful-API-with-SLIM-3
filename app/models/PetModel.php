@@ -15,11 +15,14 @@ class PetModel
 		$this->redBeanFactory = $redBeanFactory;
 	}
 
-	public function create()
-	{
-		$pet = \R::dispense('pets');
-		$pet->name = 'doggy';
-		\R::store($pet);
-		return $pet;
+	public function create($user, $pet_data) {
+   	$pet = \R::dispense("pet")->import($pet_data, [
+      	"name"
+      	"type"
+    	])->import([
+      	"user" => $user,
+      	"datetime_created" => gmdate("Y-m-d H:i:s"),
+      	"datetime_modified" => gmdate("Y-m-d H:i:s"),
+    	]);
 	}
 }
