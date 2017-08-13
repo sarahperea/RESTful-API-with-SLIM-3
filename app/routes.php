@@ -1,8 +1,23 @@
 <?php
 
-//$app->get('/', 'Model_User:index' );
-$app->get('/', 'HomeController:index');
+/*creates a new user*/
+$app->get('/create', 'HomeController:create');
 
+/*updates a user*/
+$app->get('/update/{id}', 'HomeController:update');
+
+/*lists all users*/
+$app->get('/users', 'HomeController:retrieve');
+
+/*display user by id*/
+$app->get('/users/{id}', 'HomeController:retrieve');
+
+/*deletes a user*/
+$app->get('/delete/{id}', 'HomeController:update');
+
+
+
+/*
 //displays all records of users
 $app->get('/api/users', function($request, $response) {
 
@@ -52,4 +67,4 @@ $app->delete('/api/users/{id}', function($request, $response) {
 	R::exec( "DELETE FROM user WHERE user.user_id = :id", array(':id' => $id) );
 
 });
-
+*/
