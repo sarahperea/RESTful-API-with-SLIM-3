@@ -6,7 +6,7 @@ class_alias('\RedBeanPHP\R','\R');
 
 use App\core\RedBeanFactory;
 
-class Model_User{
+class UserModel{
 	
 	private $redBeanFactory;
 
