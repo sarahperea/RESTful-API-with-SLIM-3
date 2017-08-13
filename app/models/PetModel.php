@@ -15,4 +15,11 @@ class PetModel
 		$this->redBeanFactory = $redBeanFactory;
 	}
 
+	public function create()
+	{
+		$pet = \R::dispense('pets');
+		$pet->name = 'doggy';
+		\R::store($pet);
+		return $pet;
+	}
 }
