@@ -28,11 +28,10 @@ class UserModel{
 
 	public function create($parsedBody)
 	{
-		$user = \R::dispense([
-			'_type' => 'users',
-			'firstname' => $parsedBody['first_name'],
-			'middlename' => $parsedBody['middle_name'],
-			'lastname' => $parsedBody['last_name'],
+		$user = \R::dispense("user")->import($parsedBody, [
+			 "firstname",
+			 "middlename",
+			 "lastname"
 		]);
 		\R::store($user);
 		return $user;
@@ -40,10 +39,11 @@ class UserModel{
 
 	public function update($parsedBody, $id)
 	{
-		$user = \R::load('users',$id);
-		$user->firstname = $parsedBody['first_name'];
-		$user->middlename = $parsedBody['middle_name'];
-		$user->lastname = $parsedBody['last_name'];
+		$user = \R::load('users',$id)->import($parsedBody, [
+			 "firstname",
+			 "middlename",
+			 "lastname"
+		]);
 		\R::store($user);
 		return $user;
 	}
