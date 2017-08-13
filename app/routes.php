@@ -1,10 +1,10 @@
 <?php
 
 /*creates a new user*/
-$app->get('/create', 'HomeController:create');
+$app->post('/create', 'HomeController:create');
 
 /*updates a user*/
-$app->get('/update/{id}', 'HomeController:update');
+$app->put('/update/{id}', 'HomeController:update');
 
 /*lists all users*/
 $app->get('/users', 'HomeController:retrieve');
@@ -13,7 +13,7 @@ $app->get('/users', 'HomeController:retrieve');
 $app->get('/users/{id}', 'HomeController:retrieve');
 
 /*deletes a user*/
-$app->get('/delete/{id}', 'HomeController:update');
+$app->delete('/delete/{id}', 'HomeController:update');
 
 
 
